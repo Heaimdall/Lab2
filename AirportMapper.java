@@ -14,7 +14,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightsWritableCom
     protected void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
 
-        String[] column = value.toString().replace("\"", "").split("(?!, )");
+        String[] column = value.toString().replace("\"", "").split(",(?! )");
 
         String code = column[0];
         String name = column[1];

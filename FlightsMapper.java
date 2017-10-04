@@ -24,8 +24,8 @@ public class FlightsMapper  extends Mapper<LongWritable, Text, FlightsWritableCo
         Integer flag = 1;
 
         if ((!Year.equals("\"YEAR\""))
-                && (!Cancelled.equals("")
-                && (float) 0 == Float.parseFloat(Cancelled))
+                && (!Cancelled.equals(""))
+                && ((float) 0 == Float.parseFloat(Cancelled))
                 && (!Delayed.equals("") && ((float)0 < Float.parseFloat(Delayed)))
                 && (!AiroportId.equals(""))){
 
