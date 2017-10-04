@@ -21,13 +21,14 @@ public class FlightsMapper  extends Mapper<LongWritable, Text, FlightsWritableCo
         String Cancelled = column[19];
         String Delayed = column[18];
         String AiroportId = column[14];
+        String empty = "";
         Integer flag = 1;
 
         if ((!Year.equals("\"YEAR\""))
-                && (!Cancelled.equals(""))
+                && (!Cancelled.equals(empty))
                 && ((float) 0 == Float.parseFloat(Cancelled))
-                && (!Delayed.equals("") && ((float)0 < Float.parseFloat(Delayed)))
-                && (!AiroportId.equals(""))){
+                && (!Delayed.equals(empty) && ((float)0 < Float.parseFloat(Delayed)))
+                && (!AiroportId.equals(empty))){
 
             FlightsWritableComparable entryPair = new FlightsWritableComparable();
             entryPair.setFlag(flag);
